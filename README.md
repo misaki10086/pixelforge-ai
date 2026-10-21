@@ -1,6 +1,7 @@
 # PixelForge AI — AI 游戏资产工作台
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/misaki10086/pixelforge-ai?color=blue)](https://github.com/misaki10086/pixelforge-ai/releases/latest)
 [![Tauri](https://img.shields.io/badge/Tauri-2.x-24C8DB?logo=tauri&logoColor=white)](https://tauri.app)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)](https://react.dev)
 [![Rust](https://img.shields.io/badge/Rust-stable-000000?logo=rust&logoColor=white)](https://www.rust-lang.org)
@@ -11,6 +12,18 @@
 核心理念不是「AI 画图网站」，而是完整的生产管线：
 
 **AI 生成 → 资产处理 → 动画 → 编辑 → 管理 → 游戏引擎导出**
+
+## 下载
+
+不用编译，直接下 exe：**[最新版本 Releases](https://github.com/misaki10086/pixelforge-ai/releases/latest)**
+
+| 文件 | 说明 |
+| --- | --- |
+| `PixelForge-AI_x.y.z_x64-setup.exe` | 安装版（推荐）：按当前用户安装，免管理员权限 |
+| `PixelForge-AI_x.y.z_x64-portable.zip` | 免安装版：解压后双击 `PixelForge AI.exe` 即可 |
+
+系统要求：Windows 10 / 11 64 位；需要 WebView2 运行时（Windows 11 已内置）。
+本仓库不内置任何 API Key，首次使用需在「设置 → AI 服务商」里填入你自己的 Key。
 
 ## 截图
 
