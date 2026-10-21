@@ -32,3 +32,6 @@ Thumbs.db
 
 # 本地生成的资产项目（若有人把项目目录建在仓库内）
 PixelForge/
+
+# 打包产物（安装包 / 绿色版，体积大，走 Release 或私下分发）
+release/
