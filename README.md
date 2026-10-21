@@ -1,10 +1,31 @@
-# PixelForge AI — AI Game Asset Studio
+# PixelForge AI — AI 游戏资产工作台
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Tauri](https://img.shields.io/badge/Tauri-2.x-24C8DB?logo=tauri&logoColor=white)](https://tauri.app)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)](https://react.dev)
+[![Rust](https://img.shields.io/badge/Rust-stable-000000?logo=rust&logoColor=white)](https://www.rust-lang.org)
+[![Platform](https://img.shields.io/badge/platform-Windows%2011-0078D6?logo=windows&logoColor=white)](#)
 
 面向独立游戏开发者的 AI 游戏资产生成工作台（Windows 11 桌面应用）。
 
 核心理念不是「AI 画图网站」，而是完整的生产管线：
 
 **AI 生成 → 资产处理 → 动画 → 编辑 → 管理 → 游戏引擎导出**
+
+## 截图
+
+> 截图待补充：把图片放进 `docs/screenshots/`，命名 01-dashboard / 02-generate / 03-assets / 04-animation（.png），
+> 然后取消下方注释即可。
+
+<!--
+| 概览 | 生成 |
+| --- | --- |
+| ![概览](docs/screenshots/01-dashboard.png) | ![生成](docs/screenshots/02-generate.png) |
+
+| 资产库 | 动画时间轴 |
+| --- | --- |
+| ![资产库](docs/screenshots/03-assets.png) | ![动画](docs/screenshots/04-animation.png) |
+-->
 
 ## 技术栈
 
@@ -128,3 +149,10 @@ API Key 会写入 Windows 凭据管理器；在「Projects」页创建项目；�
 - API Key 仅存于 Windows 凭据管理器（服务名 `PixelForge AI`）；
 - 不写入 SQLite、不写入前端源码、不写入任何 JSON/配置文件；
 - `.gitignore` 已排除 `.env` 与密钥文件。
+
+## 许可证
+
+本项目基于 [MIT License](LICENSE) 开源，Copyright (c) 2026 misaki10086。
+
+README 中「设计参考与致谢」所列的第三方项目、调色板与格式规范，版权归各自作者所有，
+本项目仅借鉴其交互惯例与算法思路，未复制其源代码。
