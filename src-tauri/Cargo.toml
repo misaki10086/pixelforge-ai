@@ -1,0 +1,34 @@
+[package]
+name = "pixelforge"
+version = "0.1.0"
+description = "PixelForge AI — AI Game Asset Studio"
+authors = ["PixelForge"]
+edition = "2021"
+
+[lib]
+name = "pixelforge_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+parking_lot = "0.12"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+reqwest = { version = "0.12", features = ["json", "multipart"] }
+async-trait = "0.1"
+base64 = "0.22"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+keyring = { version = "3", features = ["windows-native"] }
+dirs = "5"
+image = "0.25"
+thiserror = "2"
+
+[profile.dev]
+incremental = true

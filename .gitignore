@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+src-tauri/target/
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# 环境变量与密钥：严禁提交
+.env
+.env.*
+*.pem
+*.key
+
+# 本地数据库与运行时产物（含 prompt、项目路径、服务商配置等隐私）
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.log
+
+# AI 助手本地记忆（含本机绝对路径，不宜公开）
+.workbuddy/
+
+# 本地生成的资产项目（若有人把项目目录建在仓库内）
+PixelForge/

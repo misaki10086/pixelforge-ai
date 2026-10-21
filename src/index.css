@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ */
+/* 主题变量（rgb 三元组，供 Tailwind 颜色使用 alpha-value）            */
+/* ------------------------------------------------------------------ */
+:root,
+[data-theme="dark"] {
+  --c-base: 22 23 26;
+  --c-panel: 30 31 35;
+  --c-elevated: 38 40 45;
+  --c-input: 18 19 22;
+  --c-hover: 44 46 52;
+  --c-line: 47 50 57;
+  --c-line-strong: 70 74 84;
+  --c-ink: 212 216 222;
+  --c-ink-dim: 146 152 162;
+  --c-ink-faint: 104 110 120;
+  --c-accent: 232 163 61;
+  --c-accent-dim: 120 90 44;
+  --c-ok: 106 190 120;
+  --c-warn: 230 179 80;
+  --c-bad: 224 92 92;
+  --c-info: 96 156 224;
+  --c-sel-bg: 52 58 68;
+}
+
+[data-theme="light"] {
+  --c-base: 238 239 241;
+  --c-panel: 248 249 250;
+  --c-elevated: 255 255 255;
+  --c-input: 255 255 255;
+  --c-hover: 228 231 235;
+  --c-line: 205 209 215;
+  --c-line-strong: 160 166 175;
+  --c-ink: 40 44 50;
+  --c-ink-dim: 90 97 108;
+  --c-ink-faint: 140 147 158;
+  --c-accent: 200 120 20;
+  --c-accent-dim: 230 190 130;
+  --c-ok: 40 140 70;
+  --c-warn: 180 130 30;
+  --c-bad: 200 50 50;
+  --c-info: 40 100 180;
+  --c-sel-bg: 210 225 245;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  @apply bg-base text-ink text-[12px] font-sans antialiased;
+  user-select: none;
+}
+
+input,
+textarea {
+  user-select: text;
+}
+
+/* 通用组件类 --------------------------------------------------------- */
+@layer components {
+  .panel {
+    @apply bg-panel border border-line;
+  }
+
+  .input {
+    @apply h-7 w-full bg-input border border-line px-2 text-ink text-[12px] outline-none;
+  }
+  .input:focus {
+    @apply border-accent/70;
+  }
+  .input::placeholder {
+    @apply text-inkfaint;
+  }
+
+  .select {
+    @apply h-7 bg-input border border-line px-1 text-[12px] text-ink outline-none cursor-pointer;
+  }
+  .select:focus {
+    @apply border-accent/70;
+  }
+  .select option {
+    @apply bg-panel text-ink;
+  }
+
+  .btn {
+    @apply inline-flex h-7 items-center justify-center gap-1.5 border border-line bg-elevated px-3 text-[12px] text-ink whitespace-nowrap;
+  }
+  .btn:hover:not(:disabled) {
+    @apply bg-hover border-linestrong;
+  }
+  .btn:active:not(:disabled) {
+    @apply bg-input;
+  }
+  .btn:disabled {
+    @apply opacity-40 cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply border-accent/80 bg-accent/15 text-accent;
+  }
+  .btn-primary:hover:not(:disabled) {
+    @apply bg-accent/25 border-accent;
+  }
+
+  .btn-danger {
+    @apply border-bad/50 text-bad;
+  }
+  .btn-danger:hover:not(:disabled) {
+    @apply bg-bad/15 border-bad;
+  }
+
+  .btn-ghost {
+    @apply border-transparent bg-transparent text-inkdim;
+  }
+  .btn-ghost:hover:not(:disabled) {
+    @apply text-ink bg-hover border-transparent;
+  }
+}
+
+/* 细滚动条 ----------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--c-line-strong) / 0.6);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--c-line-strong));
+  background-clip: content-box;
+  border: 2px solid transparent;
+}
+
+/* 像素画渲染与棋盘格透明底 ------------------------------------------- */
+.pixelated {
+  image-rendering: pixelated;
+}
+
+.checkerboard {
+  background-color: rgb(var(--c-base));
+  background-image: linear-gradient(
+      45deg,
+      rgb(var(--c-line) / 0.5) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgb(var(--c-line) / 0.5) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgb(var(--c-line) / 0.5) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgb(var(--c-line) / 0.5) 75%
+    );
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
